@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = UITabBarController()
 
 
-        let firstViewController = FirstNavigationController()
+        let firstViewController = MediaLibrarySubViewController()
         let firstNavigationController = UINavigationController(rootViewController: firstViewController)
         firstViewController.tabBarItem = UITabBarItem(title: "Медиатека", image: .init(systemName: "photo.fill.on.rectangle.fill"), tag: 0)
 
@@ -47,10 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         secondViewController.view.backgroundColor = .systemBlue
         secondViewController.tabBarItem = UITabBarItem(title: "Для Вас", image: .init(systemName: "heart.text.square.fill"), tag: 1)
 
-        let thirdViewController = UIViewController()
+        let thirdViewController = AlbumsViewConroller()
         let thirdNavigationController = UINavigationController(rootViewController: thirdViewController)
 
-        thirdViewController.view.backgroundColor = .systemBrown
+        thirdViewController.title = "Альбомы"
         thirdViewController.tabBarItem = UITabBarItem(title: "Альбомы", image: .init(systemName: "square.stack.fill"), tag: 2)
 
         let fourViewController = UIViewController()
@@ -64,8 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fourViewController], animated: true)
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
-
-
+        
         return true
     }
 }
