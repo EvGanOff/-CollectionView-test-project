@@ -13,16 +13,16 @@ class AlbumsViewConroller: UIViewController {
 
     // MARK: - Properties
 
-    private lazy var collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
 
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
-        collectionView.register(MyAlbumsCell.self, forCellWithReuseIdentifier: "MyAlbumsCell")
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout())
+        collectionView.register(MyAlbumsCell.self, forCellWithReuseIdentifier: MyAlbumsCell.identifier)
         collectionView.register(HeaderMyAlbumsCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderMyAlbumsCell.identifier)
+        collectionView.register(PeopleAndPlacesCell.self, forCellWithReuseIdentifier: PeopleAndPlacesCell.identifier)
+        collectionView.register(HeaderPeopleAndPlacesCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderPeopleAndPlacesCell.identifier)
 
-        collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
 
         return collectionView
@@ -31,7 +31,7 @@ class AlbumsViewConroller: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Альбомыыыыыыыыы" 
+        title = "Альбомы"
         view.backgroundColor = .white
         setupLayout()
     }
@@ -43,61 +43,105 @@ class AlbumsViewConroller: UIViewController {
         view.addSubview(collectionView)
 
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 5),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            collectionView.heightAnchor.constraint(equalTo: view.heightAnchor)
         ])
     }
 
 }
 
-extension AlbumsViewConroller: UICollectionViewDelegate {
+extension AlbumsViewConroller {
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+    private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+
+        return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
+
+            switch sectionNumber {
+            case 0: return self.layoutSectionCellAlbumsViewCellCell()
+            case 1: return self.layoutSectionPeopleAndPlacesCell()
+            default:
+                return self.layoutSectionPeopleAndPlacesCell()
+            }
+        }
+    }
+
+    func layoutSectionCellAlbumsViewCellCell() -> NSCollectionLayoutSection {
+
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .absolute(50))
+
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top)
+
+        sectionHeader.pinToVisibleBounds = true
+        sectionHeader.zIndex = Int.max
+
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1))
+
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(180),
+            heightDimension: .absolute(260)
+        )
+
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                                                      leading: 0,
+                                                      bottom: 60,
+                                                      trailing: 0)
+        group.interItemSpacing = .fixed(60)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .groupPaging
+        section.boundarySupplementaryItems = [sectionHeader]
+        return section
+    }
+
+    func layoutSectionPeopleAndPlacesCell() -> NSCollectionLayoutSection {
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .absolute(50))
+
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top)
+
+        sectionHeader.pinToVisibleBounds = true
+        sectionHeader.zIndex = Int.max
+
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1))
+
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(180),
+            heightDimension: .absolute(260)
+        )
+
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                                                      leading: 0,
+                                                      bottom: 60,
+                                                      trailing: 0)
+        group.interItemSpacing = .fixed(60)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .groupPaging
+        section.boundarySupplementaryItems = [sectionHeader]
+        return section
     }
 
 }
 
 
 
-extension AlbumsViewConroller: UICollectionViewDataSource {
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return AlbumsViewConroller.sectionData["Section\(section)"]?.count ?? 0
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard  let data = AlbumsViewConroller.sectionData["Section\(indexPath.section)"]?[indexPath.row] else { return UICollectionViewCell() }
-//        guard let data = collectionView.dequeueReusableCell(withReuseIdentifier: "MyAlbumsCell", for: indexPath) as? MyAlbumsCell  else { return UICollectionViewCell() }
-        switch data.type {
-        case .cellMyAlbums:
-            return setupMyAlbums(for: indexPath, with: data)
-        }
-    }
-
-        func setupMyAlbums(for indexPath: IndexPath, with data: PhotoAlbum) -> UICollectionViewCell {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyAlbumsCell", for: indexPath) as? MyAlbumsCell else { return UICollectionViewCell() }
-
-            cell.titleLable.text = data.title
-            cell.numberLable.text = data.number
-            cell.titleImage = data.image
-            return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerCellMyAlbums =  collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderMyAlbumsCell.identifier, for: indexPath) as! HeaderMyAlbumsCell
-        guard  let data = AlbumsViewConroller.sectionData["Section\(indexPath.section)"]?[indexPath.row] else { return UICollectionViewCell() }
-
-        switch data.type {
-        case .cellMyAlbums:
-            headerCellMyAlbums.configure()
-            return headerCellMyAlbums
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Press cell: \(String(describing: AlbumsViewConroller.sectionData["Section\(indexPath.section)"]?[indexPath.row].title))")
-    }
-}

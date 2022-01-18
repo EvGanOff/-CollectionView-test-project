@@ -14,21 +14,38 @@ class MyAlbumsCell: UICollectionViewCell {
 
     // MARK: - Properties
 
-    lazy var titleLable: UILabel = {
+    var data: AlbumsModel? {
+        didSet {
+            guard let data = data else { return }
+            titleImage.image = data.image
+            titleLabel.text = data.title
+            numberLabel.text = String(data.number)
+        }
+    }
+
+    lazy var titleLabel: UILabel = {
         let lable = UILabel()
         lable.font = MetricMyAlbums.labelFont
+        lable.translatesAutoresizingMaskIntoConstraints = false
+        lable.textAlignment = .left
+        lable.textColor = .black
         return lable
     }()
 
-    lazy var numberLable: UILabel = {
+    lazy var numberLabel: UILabel = {
         let lable = UILabel()
         lable.textColor = .systemGray3
         lable.font = MetricMyAlbums.labelFont
+        lable.translatesAutoresizingMaskIntoConstraints = false
+        lable.textAlignment = .left
         return lable
     }()
 
     lazy var titleImage: UIImageView = {
         let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFill
+        image.layer.cornerRadius = 15
         return image
     }()
 
@@ -42,7 +59,7 @@ class MyAlbumsCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: -
+    // MARK: - LayoutSubviews
 
     override func layoutSubviews() {
         setupHierarchy()
@@ -51,15 +68,15 @@ class MyAlbumsCell: UICollectionViewCell {
 
 // MARK: - SetupHierarchy
 
-    func setupHierarchy() {
-        contentView.addSubview(titleLable)
-        contentView.addSubview(numberLable)
+   private func setupHierarchy() {
         contentView.addSubview(titleImage)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(numberLabel)
     }
 
-    // MARK: - SetupHierarchy
+    // MARK: - SetupLayout
 
-    func setupLayout() {
+    private func setupLayout() {
         titleImage.layer.cornerRadius = 5
         titleImage.clipsToBounds = true
         titleImage.contentMode = UIView.ContentMode.scaleAspectFill
@@ -72,24 +89,19 @@ class MyAlbumsCell: UICollectionViewCell {
                 constant: MetricMyAlbums.titleImageLeadingAnchorConstant),
             titleImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
                 constant: MetricMyAlbums.titleImageTrailingAnchorConstant),
-            titleLable.topAnchor.constraint(equalTo: contentView.topAnchor,
-                constant: MetricMyAlbums.titleLabelTopAnchorConstant),
-            titleLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                constant: MetricMyAlbums.titleLabelLeadingAnchorConstant),
-            titleLable.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                constant: MetricMyAlbums.titleLabelTrailingAnchorConstant),
-            numberLable.topAnchor.constraint(equalTo: contentView.topAnchor,
-                constant: MetricMyAlbums.titleNumberTopAnchorConstant),
-            numberLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                constant: MetricMyAlbums.titleNumberLeadingAnchorConstant),
-            numberLable.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                constant: MetricMyAlbums.titleNumberTrailingAnchorConstant)
+            titleLabel.topAnchor.constraint(equalTo: titleImage.bottomAnchor, constant: MetricMyAlbums.titleLabelTopAnchorConstant),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: MetricMyAlbums.titleLabelLeadingAnchorConstant),
+            titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+
+            numberLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor)
         ])
     }
 }
 
 
-// MARK: - Metric
+// MARK: - Metrics
 
 struct MetricMyAlbums {
 
@@ -99,7 +111,7 @@ struct MetricMyAlbums {
     static let titleImageLeadingAnchorConstant: CGFloat = 5
     static let titleImageTrailingAnchorConstant: CGFloat = -5
 
-    static let titleLabelTopAnchorConstant: CGFloat = 5
+    static let titleLabelTopAnchorConstant: CGFloat = 7
     static let titleLabelLeadingAnchorConstant: CGFloat = 5
     static let titleLabelTrailingAnchorConstant: CGFloat = 5
 

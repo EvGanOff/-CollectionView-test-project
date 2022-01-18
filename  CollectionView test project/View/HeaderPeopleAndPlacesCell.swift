@@ -1,18 +1,18 @@
 //
-//  HeaderMyAlbumsCell.swift
+//  HeaderPeopleAndPlacesCell.swift
 //   CollectionView test project
 //
-//  Created by Евгений Ганусенко on 1/11/22.
+//  Created by Евгений Ганусенко on 1/16/22.
 //
 
 import Foundation
 import UIKit
 
-class HeaderMyAlbumsCell: UICollectionReusableView {
+class HeaderPeopleAndPlacesCell: UICollectionReusableView {
 
-    static let identifier = "HeaderMyAlbumsCell"
-    
-    // MARK: - Properties
+    static let identifier = "HeaderPeopleAndPlacesCell"
+
+    //MARK: - Properties
 
     private lazy var container: UIView = {
         let container = UIView()
@@ -24,8 +24,8 @@ class HeaderMyAlbumsCell: UICollectionReusableView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Мои альбомы"
-        label.font = MetricHeaderMyAlbums.labelFont
+        label.text = "Люди и места"
+        label.font = MetricHeaderPeopleAndPlacesCell.labelFont
         label.textAlignment = .left
         label.textColor = .black
         return label
@@ -35,7 +35,7 @@ class HeaderMyAlbumsCell: UICollectionReusableView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Все"
-        label.font = MetricHeaderMyAlbums.labelFont
+        label.font = MetricHeaderPeopleAndPlacesCell.labelFont
         label.textAlignment = .left
         label.textColor = .link
         return label
@@ -59,14 +59,14 @@ class HeaderMyAlbumsCell: UICollectionReusableView {
 
     // MARK: - SetupHierarchy
 
-    func setupHierarchy() {
+    private func setupHierarchy() {
         addSubview(container)
         container.addSubview(titleLabel)
         container.addSubview(showAllLabel)
     }
 
     // MARK: - SetupLayout
-    
+
     private func setupLayout() {
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: topAnchor),
@@ -76,7 +76,7 @@ class HeaderMyAlbumsCell: UICollectionReusableView {
             container.heightAnchor.constraint(equalTo: heightAnchor),
 
             titleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor,
-                constant: MetricHeaderMyAlbums.labelLeadingAnchorConstant),
+                constant: MetricHeaderPeopleAndPlacesCell.labelLeadingAnchorConstant),
             titleLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor),
 
             showAllLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor),
@@ -87,7 +87,7 @@ class HeaderMyAlbumsCell: UICollectionReusableView {
 
 // MARK: - Metric
 
-struct MetricHeaderMyAlbums {
+struct MetricHeaderPeopleAndPlacesCell {
 
     static let labelFont: UIFont = .boldSystemFont(ofSize: 18)
 
@@ -96,3 +96,4 @@ struct MetricHeaderMyAlbums {
 
     static let buttonTrailingAnchorConstant: CGFloat = -10
 }
+

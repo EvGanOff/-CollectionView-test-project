@@ -8,58 +8,43 @@
 import Foundation
 import UIKit
 
-struct PhotoAlbum {
-    var type: ModelCellType
-    var image: UIImageView
+
+struct AlbumsModel {
+    var image: UIImage?
     var title: String
-    var number: String
-}
-enum ModelCellType {
-    case cellMyAlbums
-//    case cellPeopleAndPlaces
-//    case cellTypesOfMedia
+    var number: Int
 }
 
+extension AlbumsModel {
+    static let firstSection = [
+        AlbumsModel(image: UIImage(named: "pic_3"), title: "Weird Buildings", number: 1),
+        AlbumsModel(image: UIImage(named: "pic_2"), title: "Old Monuments", number: 2),
+        AlbumsModel(image: UIImage(named: "pic_1"), title: "Factories", number: 3),
+        AlbumsModel(image: UIImage(named: "pic_1"), title: "TV Towers", number: 2),
+        AlbumsModel(image: UIImage(named: "pic_4"), title: "Street Artists", number: 4),
+        AlbumsModel(image: UIImage(named: "pic_3"), title: "Shadow and Light", number: 1),
+        AlbumsModel(image: UIImage(named: "pic_1"), title: "Bridges", number: 2),
+        AlbumsModel(image: UIImage(named: "pic_1"), title: "Trains", number: 4)
+    ]
 
-extension AlbumsViewConroller {
-    static var sectionData = [ "Section0": [PhotoAlbum(
-                                type: .cellMyAlbums,
-                                image: UIImageView.init(image: UIImage(named: "pic_1")!),
-                                title: "Недавние",
-                                number: "9 259"),
-                              PhotoAlbum(
-                                type: .cellMyAlbums,
-                                image: UIImageView.init(image: UIImage(named: "pic_1")!),
-                                title: "Избранное",
-                                number: "123"),
-                              PhotoAlbum(
-                                type: .cellMyAlbums,
-                                image: UIImageView.init(image: UIImage(named: "pic_1")!),
-                                title: "Instagram",
-                                number: "654"),
-                              PhotoAlbum(
-                                type: .cellMyAlbums,
-                                image: UIImageView.init(image: UIImage(named: "pic_1")!),
-                                title: "WhatsApp",
-                                number: "14"),
-                              PhotoAlbum(
-                                type: .cellMyAlbums,
-                                image: UIImageView.init(image: UIImage(named: "pic_1")!),
-                                title: "FaceApp",
-                                number: "321"),
-                              PhotoAlbum(
-                                type: .cellMyAlbums,
-                                image: UIImageView.init(image: UIImage(named: "pic_1")!),
-                                title: "Gradient",
-                                number: "456"),
-                              PhotoAlbum(
-                                type: .cellMyAlbums,
-                                image: UIImageView.init(image: UIImage(named: "pic_1")!),
-                                title: "Movavi Clips",
-                                number: "321"),
-                              PhotoAlbum(
-                                type: .cellMyAlbums,
-                                image: UIImageView.init(image: UIImage(named: "pic_1")!),
-                                title: "Недавние",
-                                number: "456")]
-]}
+    static let secondSection = [
+        AlbumsModel(image: UIImage(named: "pic_1"), title: "Weird Buildings", number: 8),
+        AlbumsModel(image: UIImage(named: "pic_2"), title: "Old Monuments", number: 12),
+        AlbumsModel(image: UIImage(named: "pic_3"), title: "Factories", number: 4),
+        AlbumsModel(image: UIImage(named: "pic_4"), title: "TV Towers", number: 21)
+    ]
+
+    static let thirdSection = [
+        AlbumsModel(image: UIImage(named: "pic_1"), title: "Weird Buildings", number: 8),
+        AlbumsModel(image: UIImage(named: "pic_2"), title: "Old Monuments", number: 12),
+        AlbumsModel(image: UIImage(named: "pic_3"), title: "Factories", number: 4),
+        AlbumsModel(image: UIImage(named: "pic_4"), title: "TV Towers", number: 21)
+    ]
+
+    static let fourSection = [
+        AlbumsModel(image: UIImage(named: "pic_1"), title: "Weird Buildings", number: 8),
+        AlbumsModel(image: UIImage(named: "pic_2"), title: "Old Monuments", number: 12),
+        AlbumsModel(image: UIImage(named: "pic_3"), title: "Factories", number: 4),
+        AlbumsModel(image: UIImage(named: "pic_4"), title: "TV Towers", number: 21)
+    ]
+}

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5E7E9CB1278D96D00027D277 /* HeaderMyAlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E9CB0278D96D00027D277 /* HeaderMyAlbumsCell.swift */; };
+		5E7E9CB4279036760027D277 /* AlbumsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E9CB3279036760027D277 /* AlbumsDataSource.swift */; };
+		5E7E9CB627947C460027D277 /* HeaderPeopleAndPlacesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E9CB527947C460027D277 /* HeaderPeopleAndPlacesCell.swift */; };
+		5E7E9CB82796EC4A0027D277 /* HeaderTypesOfMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E9CB72796EC4A0027D277 /* HeaderTypesOfMediaCell.swift */; };
 		5E81CF21276F948E00BE03B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81CF20276F948E00BE03B3 /* AppDelegate.swift */; };
 		5E81CF25276F948E00BE03B3 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81CF24276F948E00BE03B3 /* GalleryViewController.swift */; };
 		5E81CF28276F948E00BE03B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E81CF26276F948E00BE03B3 /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		5E7E9CB0278D96D00027D277 /* HeaderMyAlbumsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMyAlbumsCell.swift; sourceTree = "<group>"; };
+		5E7E9CB3279036760027D277 /* AlbumsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsDataSource.swift; sourceTree = "<group>"; };
+		5E7E9CB527947C460027D277 /* HeaderPeopleAndPlacesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPeopleAndPlacesCell.swift; sourceTree = "<group>"; };
+		5E7E9CB72796EC4A0027D277 /* HeaderTypesOfMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTypesOfMediaCell.swift; sourceTree = "<group>"; };
 		5E81CF1D276F948E00BE03B3 /*  CollectionView test project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = " CollectionView test project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E81CF20276F948E00BE03B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E81CF24276F948E00BE03B3 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
@@ -135,9 +141,11 @@
 			isa = PBXGroup;
 			children = (
 				5EACFFD3278700DC00EBE459 /* MyAlbumsCell.swift */,
-				5E7E9CB0278D96D00027D277 /* HeaderMyAlbumsCell.swift */,
 				5EACFFD52787012500EBE459 /* PeopleAndPlacesCell.swift */,
 				5EACFFD72787013A00EBE459 /* TypesOfMediaCell.swift */,
+				5E7E9CB0278D96D00027D277 /* HeaderMyAlbumsCell.swift */,
+				5E7E9CB527947C460027D277 /* HeaderPeopleAndPlacesCell.swift */,
+				5E7E9CB72796EC4A0027D277 /* HeaderTypesOfMediaCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED15C942778BBEB001380BA /* AlbumsViewController .swift */,
+				5E7E9CB3279036760027D277 /* AlbumsDataSource.swift */,
 				5E7E9CAE278D96290027D277 /* MediaLibraryViewController */,
 				5E7E9CAF278D963A0027D277 /* GalleryViewController */,
 			);
@@ -293,8 +302,11 @@
 			files = (
 				5E81CF56276FC85000BE03B3 /* Model.swift in Sources */,
 				5E7E9CB1278D96D00027D277 /* HeaderMyAlbumsCell.swift in Sources */,
+				5E7E9CB4279036760027D277 /* AlbumsDataSource.swift in Sources */,
+				5E7E9CB627947C460027D277 /* HeaderPeopleAndPlacesCell.swift in Sources */,
 				5EACFFD4278700DC00EBE459 /* MyAlbumsCell.swift in Sources */,
 				5EACFFD62787012500EBE459 /* PeopleAndPlacesCell.swift in Sources */,
+				5E7E9CB82796EC4A0027D277 /* HeaderTypesOfMediaCell.swift in Sources */,
 				5EACFFD82787013A00EBE459 /* TypesOfMediaCell.swift in Sources */,
 				5E81CF25276F948E00BE03B3 /* GalleryViewController.swift in Sources */,
 				5ED15C952778BBEB001380BA /* AlbumsViewController .swift in Sources */,
