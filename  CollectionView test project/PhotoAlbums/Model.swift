@@ -28,6 +28,7 @@ extension AlbumsModel {
     ]
 
     static let secondSection = [
+        AlbumsModel(image: UIImage(named: "pic_4"), title: "TV Towers", number: 21),
         AlbumsModel(image: UIImage(named: "pic_1"), title: "Weird Buildings", number: 8),
         AlbumsModel(image: UIImage(named: "pic_2"), title: "Old Monuments", number: 12),
         AlbumsModel(image: UIImage(named: "pic_3"), title: "Factories", number: 4),
@@ -35,16 +36,14 @@ extension AlbumsModel {
     ]
 
     static let thirdSection = [
-        AlbumsModel(image: UIImage(named: "pic_1"), title: "Weird Buildings", number: 8),
-        AlbumsModel(image: UIImage(named: "pic_2"), title: "Old Monuments", number: 12),
-        AlbumsModel(image: UIImage(named: "pic_3"), title: "Factories", number: 4),
-        AlbumsModel(image: UIImage(named: "pic_4"), title: "TV Towers", number: 21)
+        AlbumsModel(image: UIImage(named: "pic_1"), title: "Facebook", number: 8),
+        AlbumsModel(image: UIImage(named: "pic_2"), title: "Instagram", number: 12),
+        AlbumsModel(image: UIImage(named: "pic_3"), title: "Snapchat", number: 4)
     ]
 
     static let fourSection = [
-        AlbumsModel(image: UIImage(named: "pic_1"), title: "Weird Buildings", number: 8),
-        AlbumsModel(image: UIImage(named: "pic_2"), title: "Old Monuments", number: 12),
-        AlbumsModel(image: UIImage(named: "pic_3"), title: "Factories", number: 4),
-        AlbumsModel(image: UIImage(named: "pic_4"), title: "TV Towers", number: 21)
+        AlbumsModel(image: UIImage(named: "pic_1"), title: "Facebook", number: 8),
+        AlbumsModel(image: UIImage(named: "pic_2"), title: "Instagram", number: 12),
+        AlbumsModel(image: UIImage(named: "pic_3"), title: "Snapchat", number: 4)
     ]
 }

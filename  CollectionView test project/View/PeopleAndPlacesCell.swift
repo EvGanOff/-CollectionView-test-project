@@ -18,21 +18,25 @@ class PeopleAndPlacesCell: UICollectionViewCell {
             guard let data = data else { return }
             titleImage.image = data.image
             titleLabel.text = data.title
-            numberLabel.text = String(data.number ?? 0)
+            numberLabel.text = String(data.number)
         }
     }
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = MetricPeopleAndPlacesCell.labelFont
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
         label.textColor = .black
         return label
     }()
 
-    lazy var             numberLabel: UILabel = {
+    lazy var numberLabel: UILabel = {
         let label = UILabel()
         label.font = MetricPeopleAndPlacesCell.labelFont
         label.textColor = .systemGray2
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
         return label
     }()
 
@@ -41,6 +45,8 @@ class PeopleAndPlacesCell: UICollectionViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = 15
+        image.clipsToBounds = true
+        image.layer.masksToBounds = true
         return image
     } ()
 
@@ -66,7 +72,7 @@ class PeopleAndPlacesCell: UICollectionViewCell {
     private func setupHierarchy() {
         contentView.addSubview(titleImage)
         contentView.addSubview(titleLabel)
-        contentView.addSubview(            numberLabel)
+        contentView.addSubview(numberLabel)
     }
 
     // MARK: - SetupLayout

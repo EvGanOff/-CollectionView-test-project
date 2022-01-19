@@ -75,9 +75,11 @@ class HeaderPeopleAndPlacesCell: UICollectionReusableView {
             container.widthAnchor.constraint(equalTo: widthAnchor),
             container.heightAnchor.constraint(equalTo: heightAnchor),
 
-            titleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor,
+            titleLabel.leadingAnchor.constraint(
+                equalTo: container.leadingAnchor,
                 constant: MetricHeaderPeopleAndPlacesCell.labelLeadingAnchorConstant),
-            titleLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+            titleLabel.centerYAnchor.constraint(
+                equalTo: container.centerYAnchor),
 
             showAllLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor),
             showAllLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor)

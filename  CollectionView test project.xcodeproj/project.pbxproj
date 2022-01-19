@@ -104,6 +104,16 @@
 			path = GalleryViewController;
 			sourceTree = "<group>";
 		};
+		5E7E9CB92796F0010027D277 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				5E7E9CB0278D96D00027D277 /* HeaderMyAlbumsCell.swift */,
+				5E7E9CB527947C460027D277 /* HeaderPeopleAndPlacesCell.swift */,
+				5E7E9CB72796EC4A0027D277 /* HeaderTypesOfMediaCell.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		5E81CF14276F948E00BE03B3 = {
 			isa = PBXGroup;
 			children = (
@@ -143,9 +153,7 @@
 				5EACFFD3278700DC00EBE459 /* MyAlbumsCell.swift */,
 				5EACFFD52787012500EBE459 /* PeopleAndPlacesCell.swift */,
 				5EACFFD72787013A00EBE459 /* TypesOfMediaCell.swift */,
-				5E7E9CB0278D96D00027D277 /* HeaderMyAlbumsCell.swift */,
-				5E7E9CB527947C460027D277 /* HeaderPeopleAndPlacesCell.swift */,
-				5E7E9CB72796EC4A0027D277 /* HeaderTypesOfMediaCell.swift */,
+				5E7E9CB92796F0010027D277 /* Header */,
 			);
 			path = View;
 			sourceTree = "<group>";

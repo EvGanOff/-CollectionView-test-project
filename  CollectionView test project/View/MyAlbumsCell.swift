@@ -24,27 +24,29 @@ class MyAlbumsCell: UICollectionViewCell {
     }
 
     lazy var titleLabel: UILabel = {
-        let lable = UILabel()
-        lable.font = MetricMyAlbums.labelFont
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.textAlignment = .left
-        lable.textColor = .black
-        return lable
+        let label = UILabel()
+        label.font = MetricMyAlbums.labelFont
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.textColor = .black
+        return label
     }()
 
     lazy var numberLabel: UILabel = {
-        let lable = UILabel()
-        lable.textColor = .systemGray3
-        lable.font = MetricMyAlbums.labelFont
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.textAlignment = .left
-        return lable
+        let label = UILabel()
+        label.textColor = .systemGray3
+        label.font = MetricMyAlbums.labelFont
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        return label
     }()
 
     lazy var titleImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        image.layer.masksToBounds = true
         image.layer.cornerRadius = 15
         return image
     }()
