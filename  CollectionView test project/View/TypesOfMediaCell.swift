@@ -108,7 +108,7 @@ class TypesOfMediaCell: UICollectionViewCell {
 
     //MARK: - Metrics
 
-    struct MetricСellTypesOfMedia {
+    struct MetricsTypesOfMediaСell {
 
         static let labelFont = UIFont(name: "system", size: 18)
 
