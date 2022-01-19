@@ -18,11 +18,11 @@ extension AlbumsViewConroller: UICollectionViewDataSource {
         var numberOfCells: Int = 0
         switch section {
         case 0:
-            numberOfCells = AlbumsModel.firstSection.count
+            numberOfCells = AlbumsModel.sectionOfMainAlbum.count
         case 1:
-            numberOfCells = AlbumsModel.secondSection.count
+            numberOfCells = AlbumsModel.sectionOfPeopleAndPlace.count
         case 2:
-            numberOfCells = AlbumsModel.thirdSection.count
+            numberOfCells = AlbumsModel.sectionOfTypesOfMedia.count
         default:
             break
         }
@@ -33,15 +33,15 @@ extension AlbumsViewConroller: UICollectionViewDataSource {
         switch indexPath.section {
         case 0:
             let firstCell = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumsCell.identifier, for: indexPath) as! MyAlbumsCell
-            firstCell.data = AlbumsModel.firstSection[indexPath.row]
+            firstCell.data = AlbumsModel.sectionOfMainAlbum[indexPath.row]
             return firstCell
         case 1:
             let secondCell = collectionView.dequeueReusableCell(withReuseIdentifier: PeopleAndPlacesCell.identifier, for: indexPath) as! PeopleAndPlacesCell
-            secondCell.data = AlbumsModel.secondSection[indexPath.row]
+            secondCell.data = AlbumsModel.sectionOfPeopleAndPlace[indexPath.row]
             return secondCell
         case 2:
             let thirdCell = collectionView.dequeueReusableCell(withReuseIdentifier: TypesOfMediaCell.identifier, for: indexPath) as! TypesOfMediaCell
-            thirdCell.data = AlbumsModel.thirdSection[indexPath.row]
+            thirdCell.data = AlbumsModel.sectionOfTypesOfMedia[indexPath.row]
             return thirdCell
         default:
             return UICollectionViewCell()
