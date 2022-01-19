@@ -68,12 +68,10 @@ class MyAlbumsCell: UICollectionViewCell {
         setupLayout()
     }
 
-// MARK: - SetupHierarchy
+    // MARK: - SetupHierarchy
 
    private func setupHierarchy() {
-        contentView.addSubview(titleImage)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(numberLabel)
+       [titleImage, titleLabel, numberLabel].forEach { contentView.addSubview($0) }
     }
 
     // MARK: - SetupLayout
@@ -103,7 +101,7 @@ class MyAlbumsCell: UICollectionViewCell {
 }
 
 
-// MARK: - Metrics
+    // MARK: - Metrics
 
 struct MetricMyAlbumsCell {
 

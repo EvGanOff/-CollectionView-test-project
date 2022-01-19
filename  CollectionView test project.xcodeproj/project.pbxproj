@@ -141,9 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				5E81CF20276F948E00BE03B3 /* AppDelegate.swift */,
-				5E81CF5827708B4700BE03B3 /* PhotoAlbums */,
+				5E81CF5827708B4700BE03B3 /* Model */,
 				5E81CF54276FC01100BE03B3 /* View */,
-				5ED15C962778BC76001380BA /* Controllers */,
+				5ED15C962778BC76001380BA /* AlbumsControllers */,
 				5E81CF26276F948E00BE03B3 /* Main.storyboard */,
 				5E81CF29276F948F00BE03B3 /* Assets.xcassets */,
 				5E81CF2B276F948F00BE03B3 /* LaunchScreen.storyboard */,
@@ -164,15 +164,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5E81CF5827708B4700BE03B3 /* PhotoAlbums */ = {
+		5E81CF5827708B4700BE03B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				5E81CF55276FC85000BE03B3 /* Model.swift */,
 			);
-			path = PhotoAlbums;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		5ED15C962778BC76001380BA /* Controllers */ = {
+		5ED15C962778BC76001380BA /* AlbumsControllers */ = {
 			isa = PBXGroup;
 			children = (
 				5ED15C942778BBEB001380BA /* AlbumsViewController .swift */,
@@ -180,7 +180,7 @@
 				5E7E9CAE278D96290027D277 /* MediaLibraryViewController */,
 				5E7E9CAF278D963A0027D277 /* GalleryViewController */,
 			);
-			path = Controllers;
+			path = AlbumsControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,7 +10,6 @@ import UIKit
 
 class AlbumsViewConroller: UIViewController {
 
-
     // MARK: - Properties
 
     lazy var collectionView: UICollectionView = {
@@ -23,6 +22,9 @@ class AlbumsViewConroller: UIViewController {
         collectionView.register(HeaderPeopleAndPlacesCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderPeopleAndPlacesCell.identifier)
         collectionView.register(TypesOfMediaCell.self, forCellWithReuseIdentifier: TypesOfMediaCell.identifier)
         collectionView.register(HeaderTypesOfMediaCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderTypesOfMediaCell.identifier)
+        collectionView.register(OtherCell.self, forCellWithReuseIdentifier: OtherCell.identifier)
+        collectionView.register(HeaderOtherCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderOtherCell.identifier)
+
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .white
@@ -72,11 +74,14 @@ extension AlbumsViewConroller {
             case 0: return self.layoutSectionCellAlbumsViewCellCell()
             case 1: return self.layoutSectionPeopleAndPlacesCell()
             case 2: return self.layoutSectionTypesOfMediaCell()
+            case 3: return self.layoutSectionOtherCell()
             default:
                 return self.layoutSectionPeopleAndPlacesCell()
             }
         }
     }
+
+    //MARK: - layoutSectionCellAlbumsViewCellCell
 
     func layoutSectionCellAlbumsViewCellCell() -> NSCollectionLayoutSection {
 
@@ -112,6 +117,8 @@ extension AlbumsViewConroller {
         return section
     }
 
+    //MARK: - layoutSectionPeopleAndPlacesCell
+
     func layoutSectionPeopleAndPlacesCell() -> NSCollectionLayoutSection {
 
         let headerSize = NSCollectionLayoutSize(
@@ -146,6 +153,8 @@ extension AlbumsViewConroller {
 
     }
 
+    //MARK: - layoutSectionTypesOfMediaCell
+
     private func layoutSectionTypesOfMediaCell() -> NSCollectionLayoutSection {
 
         let headerSize = NSCollectionLayoutSize(
@@ -176,6 +185,42 @@ extension AlbumsViewConroller {
 
         return section
     }
+
+    //MARK: - layoutSectionOtherCell
+
+
+    private func layoutSectionOtherCell() -> NSCollectionLayoutSection {
+
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .absolute(50))
+
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top)
+
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .absolute(50))
+
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .absolute(320))
+
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [sectionHeader]
+        section.contentInsets = .init(top: 10, leading: 0, bottom: 5, trailing: 0)
+        section.orthogonalScrollingBehavior = .continuous
+
+        return section
+    }
+
+
 }
 
     //MARK: - Metrics

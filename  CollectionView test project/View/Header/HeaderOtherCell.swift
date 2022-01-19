@@ -34,7 +34,7 @@ class HeaderOtherCell: UICollectionReusableView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Все"
-        label.font = MetricsHeaderOtherCell.labelFont
+        label.font = .systemFont(ofSize: 20)
         label.textAlignment = .left
         label.textColor = .link
         return label

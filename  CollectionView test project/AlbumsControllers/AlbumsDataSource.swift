@@ -10,9 +10,14 @@ import UIKit
 
 extension AlbumsViewConroller: UICollectionViewDataSource {
 
+    //MARK: - NumberOfSections
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 4
     }
+
+    //MARK: - numberOfItemsInSection
+
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var numberOfCells: Int = 0
@@ -23,11 +28,16 @@ extension AlbumsViewConroller: UICollectionViewDataSource {
             numberOfCells = AlbumsModel.sectionOfPeopleAndPlace.count
         case 2:
             numberOfCells = AlbumsModel.sectionOfTypesOfMedia.count
+        case 3:
+            numberOfCells = AlbumsModel.sectionOfOther.count
         default:
             break
         }
         return numberOfCells
     }
+
+    //MARK: - cellForItemAt
+
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
@@ -43,10 +53,16 @@ extension AlbumsViewConroller: UICollectionViewDataSource {
             let thirdCell = collectionView.dequeueReusableCell(withReuseIdentifier: TypesOfMediaCell.identifier, for: indexPath) as! TypesOfMediaCell
             thirdCell.data = AlbumsModel.sectionOfTypesOfMedia[indexPath.row]
             return thirdCell
+        case 3:
+            let fourCell = collectionView.dequeueReusableCell(withReuseIdentifier: OtherCell.identifier, for: indexPath) as! OtherCell
+            fourCell.data = AlbumsModel.sectionOfOther[indexPath.row]
+            return fourCell
         default:
             return UICollectionViewCell()
         }
     }
+
+    //MARK: - viewForSupplementaryElementOfKind
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch indexPath.section {
@@ -68,6 +84,12 @@ extension AlbumsViewConroller: UICollectionViewDataSource {
                 withReuseIdentifier: HeaderTypesOfMediaCell.identifier,
                 for: indexPath) as! HeaderTypesOfMediaCell
             return thirdHeader
+        case 3:
+            let fourHeader = collectionView.dequeueReusableSupplementaryView(
+                ofKind: UICollectionView.elementKindSectionHeader,
+                withReuseIdentifier: HeaderOtherCell.identifier,
+                for: indexPath) as! HeaderOtherCell
+            return fourHeader
         default:
             return UICollectionReusableView()
         }
