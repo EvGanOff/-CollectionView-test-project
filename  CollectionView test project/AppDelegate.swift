@@ -61,7 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             firstNavigationController,
             secondViewController,
             thirdNavigationController,
-            fourViewController], animated: true)
+            fourViewController],
+            animated: true)
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         

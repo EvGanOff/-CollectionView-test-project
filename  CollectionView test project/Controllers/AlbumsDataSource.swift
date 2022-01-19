@@ -11,7 +11,7 @@ import UIKit
 extension AlbumsViewConroller: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,11 +41,11 @@ extension AlbumsViewConroller: UICollectionViewDataSource {
             return secondCell
         case 2:
             let thirdCell = collectionView.dequeueReusableCell(withReuseIdentifier: TypesOfMediaCell.identifier, for: indexPath) as! TypesOfMediaCell
-            thirdCell.data = AlbumsModel.secondSection[indexPath.row]
+            thirdCell.data = AlbumsModel.thirdSection[indexPath.row]
+            return thirdCell
         default:
             return UICollectionViewCell()
         }
-
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -62,6 +62,12 @@ extension AlbumsViewConroller: UICollectionViewDataSource {
                 withReuseIdentifier: HeaderPeopleAndPlacesCell.identifier,
                 for: indexPath) as! HeaderPeopleAndPlacesCell
             return secondHeader
+        case 2:
+            let thirdHeader = collectionView.dequeueReusableSupplementaryView(
+                ofKind: UICollectionView.elementKindSectionHeader,
+                withReuseIdentifier: HeaderTypesOfMediaCell.identifier,
+                for: indexPath) as! HeaderTypesOfMediaCell
+            return thirdHeader
         default:
             return UICollectionReusableView()
         }
