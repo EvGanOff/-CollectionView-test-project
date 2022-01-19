@@ -101,7 +101,7 @@ class OtherCell: UICollectionViewCell {
                 numberLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
                 numberLabel.trailingAnchor.constraint(
                     equalTo: contentView.trailingAnchor,
-                    constant: MetricsOtherСell.titleCountTrailingAnchorConstant)
+                    constant: MetricsOtherСell.titleNumberTrailingAnchorConstant)
         ])
     }
 }
@@ -119,5 +119,5 @@ struct MetricsOtherСell {
     static let titleLabelTopAnchorConstant: CGFloat = 5
     static let titleLabelLeadingAnchorConstant: CGFloat = 50
 
-    static let titleCountTrailingAnchorConstant: CGFloat = -40
+    static let titleNumberTrailingAnchorConstant: CGFloat = -40
 }

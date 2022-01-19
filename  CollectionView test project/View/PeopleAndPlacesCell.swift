@@ -84,14 +84,14 @@ class PeopleAndPlacesCell: UICollectionViewCell {
 
         NSLayoutConstraint.activate([
             titleImage.topAnchor.constraint(equalTo: contentView.topAnchor,
-                constant: MetricMyAlbums.titleImageTopAnchorConstant),
+                constant: MetricPeopleAndPlacesCell.titleImageTopAnchorConstant),
             titleImage.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             titleImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,
-                constant: MetricMyAlbums.titleImageLeadingAnchorConstant),
+                constant: MetricPeopleAndPlacesCell.titleImageLeadingAnchorConstant),
             titleImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                constant: MetricMyAlbums.titleImageTrailingAnchorConstant),
-            titleLabel.topAnchor.constraint(equalTo: titleImage.bottomAnchor, constant: MetricMyAlbums.titleLabelTopAnchorConstant),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: MetricMyAlbums.titleLabelLeadingAnchorConstant),
+                constant: MetricPeopleAndPlacesCell.titleImageTrailingAnchorConstant),
+            titleLabel.topAnchor.constraint(equalTo: titleImage.bottomAnchor, constant: MetricPeopleAndPlacesCell.titleLabelTopAnchorConstant),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: MetricPeopleAndPlacesCell.titleLabelLeadingAnchorConstant),
             titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
 
             numberLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
