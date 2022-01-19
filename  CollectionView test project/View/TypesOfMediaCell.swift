@@ -34,7 +34,7 @@ class TypesOfMediaCell: UICollectionViewCell {
 
     lazy var titleLabel: UILabel = {
         let lable = UILabel()
-        lable.font = MetricСellTypesOfMedia.labelFont
+        lable.font = MetricsTypesOfMediaСell.labelFont
         lable.translatesAutoresizingMaskIntoConstraints = false
         lable.textAlignment = .left
         lable.textColor = .black
@@ -44,7 +44,7 @@ class TypesOfMediaCell: UICollectionViewCell {
     lazy var numberLabel: UILabel = {
         let lable = UILabel()
         lable.textColor = .systemGray3
-        lable.font = MetricСellTypesOfMedia.labelFont
+        lable.font = MetricsTypesOfMediaСell.labelFont
         lable.translatesAutoresizingMaskIntoConstraints = false
         lable.textAlignment = .left
         lable.textColor = .systemGray2
@@ -83,26 +83,26 @@ class TypesOfMediaCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
                 titleImage.topAnchor.constraint(
                     equalTo: contentView.topAnchor,
-                    constant: MetricСellTypesOfMedia.titleImageTopAnchorConstant),
+                    constant: MetricsTypesOfMediaСell.titleImageTopAnchorConstant),
                 titleImage.leadingAnchor.constraint(
                     equalTo: contentView.leadingAnchor),
                 titleImage.widthAnchor.constraint(
-                    equalToConstant: MetricСellTypesOfMedia.titleImageWidthAnchorConstant),
+                    equalToConstant: MetricsTypesOfMediaСell.titleImageWidthAnchorConstant),
                 titleImage.heightAnchor.constraint(
-                    equalToConstant: MetricСellTypesOfMedia.titleImageHeightAnchorConstant),
+                    equalToConstant: MetricsTypesOfMediaСell.titleImageHeightAnchorConstant),
 
                 titleLabel.topAnchor.constraint(
                     equalTo: titleImage.topAnchor,
-                    constant: MetricСellTypesOfMedia.titleLabelTopAnchorConstant),
+                    constant: MetricsTypesOfMediaСell.titleLabelTopAnchorConstant),
                 titleLabel.leadingAnchor.constraint(
                     equalTo: titleImage.leadingAnchor,
-                    constant: MetricСellTypesOfMedia.titleLabelLeadingAnchorConstant),
+                    constant: MetricsTypesOfMediaСell.titleLabelLeadingAnchorConstant),
 
                 numberLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
                 numberLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
                 numberLabel.trailingAnchor.constraint(
                     equalTo: contentView.trailingAnchor,
-                    constant: MetricСellTypesOfMedia.titleCountTrailingAnchorConstant)
+                    constant: MetricsTypesOfMediaСell.titleNumberTrailingAnchorConstant)
         ])
     }
 
@@ -119,6 +119,6 @@ class TypesOfMediaCell: UICollectionViewCell {
         static let titleLabelTopAnchorConstant: CGFloat = 5
         static let titleLabelLeadingAnchorConstant: CGFloat = 50
 
-        static let titleCountTrailingAnchorConstant: CGFloat = -40
+        static let titleNumberTrailingAnchorConstant: CGFloat = -40
     }
 }

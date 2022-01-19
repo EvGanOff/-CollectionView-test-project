@@ -25,7 +25,7 @@ class HeaderPeopleAndPlacesCell: UICollectionReusableView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Люди и места"
-        label.font = MetricHeaderPeopleAndPlacesCell.labelFont
+        label.font = MetricsHeaderPeopleAndPlacesCell.labelFont
         label.textAlignment = .left
         label.textColor = .black
         return label
@@ -35,7 +35,7 @@ class HeaderPeopleAndPlacesCell: UICollectionReusableView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Все"
-        label.font = MetricHeaderPeopleAndPlacesCell.labelFont
+        label.font = MetricsHeaderPeopleAndPlacesCell.labelFont
         label.textAlignment = .left
         label.textColor = .link
         return label
@@ -77,11 +77,11 @@ class HeaderPeopleAndPlacesCell: UICollectionReusableView {
 
             titleLabel.leadingAnchor.constraint(
                 equalTo: container.leadingAnchor,
-                constant: MetricHeaderPeopleAndPlacesCell.labelLeadingAnchorConstant),
+                constant: MetricsHeaderPeopleAndPlacesCell.labelLeadingAnchorConstant),
             titleLabel.centerYAnchor.constraint(
                 equalTo: container.centerYAnchor),
 
-            showAllLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            showAllLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: MetricsHeaderPeopleAndPlacesCell.buttonTrailingAnchorConstant),
             showAllLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
@@ -89,13 +89,11 @@ class HeaderPeopleAndPlacesCell: UICollectionReusableView {
 
 // MARK: - Metric
 
-struct MetricHeaderPeopleAndPlacesCell {
+struct MetricsHeaderPeopleAndPlacesCell {
 
-    static let labelFont: UIFont = .boldSystemFont(ofSize: 18)
-
+    static let labelFont: UIFont = .boldSystemFont(ofSize: 20)
     static let labeleTopAnchorConstant: CGFloat = 10
     static let labelLeadingAnchorConstant: CGFloat = 5
-
-    static let buttonTrailingAnchorConstant: CGFloat = -10
+    static let buttonTrailingAnchorConstant: CGFloat = -15
 }
 

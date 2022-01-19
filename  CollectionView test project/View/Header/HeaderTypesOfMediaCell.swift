@@ -25,7 +25,7 @@ class HeaderTypesOfMediaCell: UICollectionReusableView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Медиафайлы"
-        label.font = MetricHeaderCellTypesOfMedia.labelFont
+        label.font = MetricsHeaderCellTypesOfMedia.labelFont
         label.textAlignment = .left
         label.textColor = .black
         return label
@@ -35,7 +35,7 @@ class HeaderTypesOfMediaCell: UICollectionReusableView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Все"
-        label.font = MetricHeaderCellTypesOfMedia.labelFont
+        label.font = .systemFont(ofSize: 20)
         label.textAlignment = .left
         label.textColor = .link
         return label
@@ -77,11 +77,11 @@ class HeaderTypesOfMediaCell: UICollectionReusableView {
 
             titleLabel.leadingAnchor.constraint(
                 equalTo: container.leadingAnchor,
-                constant: MetricHeaderCellTypesOfMedia.labelLeadingAnchorConstant),
+                constant: MetricsHeaderCellTypesOfMedia.labelLeadingAnchorConstant),
             titleLabel.centerYAnchor.constraint(
                 equalTo: container.centerYAnchor),
 
-            showAllLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            showAllLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: MetricsHeaderCellTypesOfMedia.buttonTrailingAnchorConstant),
             showAllLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
@@ -89,13 +89,10 @@ class HeaderTypesOfMediaCell: UICollectionReusableView {
 
 // MARK: - Metrics
 
-struct MetricHeaderCellTypesOfMedia {
+struct MetricsHeaderCellTypesOfMedia {
 
-    static let labelFont: UIFont = .boldSystemFont(ofSize: 18)
-
-    static let labeleTopAnchorConstant: CGFloat = 10
+    static let labelFont: UIFont = .boldSystemFont(ofSize: 25)
     static let labelLeadingAnchorConstant: CGFloat = 5
-
-    static let buttonTrailingAnchorConstant: CGFloat = -10
+    static let buttonTrailingAnchorConstant: CGFloat = -15
 }
 
