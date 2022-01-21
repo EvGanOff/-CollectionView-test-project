@@ -91,15 +91,12 @@ class PeopleAndPlacesCell: UICollectionViewCell {
             titleLabel.topAnchor.constraint(equalTo: titleImage.bottomAnchor, constant: MetricPeopleAndPlacesCell.titleLabelTopAnchorConstant),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: MetricPeopleAndPlacesCell.titleLabelLeadingAnchorConstant),
             titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
-
-            numberLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor)
+            titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+
+            numberLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2)
         ])
     }
-
-
-
 }
 // MARK: - Metrics
 

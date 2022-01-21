@@ -51,7 +51,6 @@ class TypesOfMediaCell: UICollectionViewCell {
         return lable
     }()
 
-
     // MARK: - Init
 
     override init(frame: CGRect) {

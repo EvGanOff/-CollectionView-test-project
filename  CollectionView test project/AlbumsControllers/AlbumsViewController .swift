@@ -67,7 +67,6 @@ class AlbumsViewConroller: UIViewController {
 extension AlbumsViewConroller {
 
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-
         return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
 
             switch sectionNumber {
@@ -86,8 +85,8 @@ extension AlbumsViewConroller {
     func layoutSectionCellAlbumsViewCellCell() -> NSCollectionLayoutSection {
 
         let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(35))
+            widthDimension: .fractionalWidth(MetricsAlbumsViewConroller.collectionLayoutSizeFractionalWidth),
+            heightDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutSizeAbsolute))
 
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -95,16 +94,16 @@ extension AlbumsViewConroller {
             alignment: .top)
 
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(180),
-            heightDimension: .absolute(240))
+            widthDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutItemSizeFractionalWidth),
+            heightDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutItemSizeFractionalAbsolute))
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0)
 
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(180),
-            heightDimension: .absolute(480)
+            widthDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutItemSizeFractionalWidth),
+            heightDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutGroupSizeFractionalAbsolute)
         )
 
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
@@ -122,8 +121,8 @@ extension AlbumsViewConroller {
     func layoutSectionPeopleAndPlacesCell() -> NSCollectionLayoutSection {
 
         let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(35))
+            widthDimension: .fractionalWidth(MetricsAlbumsViewConroller.collectionLayoutSizeFractionalWidth),
+            heightDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutSizeAbsolute))
 
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -131,16 +130,16 @@ extension AlbumsViewConroller {
             alignment: .top)
 
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(1))
+            widthDimension: .fractionalWidth(MetricsAlbumsViewConroller.collectionLayoutSizeFractionalWidth),
+            heightDimension: .fractionalHeight(MetricsAlbumsViewConroller.collectionLayoutSizeFractionalHeight))
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0)
 
 
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(180),
-            heightDimension: .absolute(240)
+            widthDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutItemSizeFractionalWidth),
+            heightDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutItemSizeFractionalAbsolute)
         )
 
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
@@ -150,7 +149,6 @@ extension AlbumsViewConroller {
         section.contentInsets = .init(top: 10, leading: 0, bottom: 5, trailing: 0)
         section.boundarySupplementaryItems = [sectionHeader]
         return section
-
     }
 
     //MARK: - layoutSectionTypesOfMediaCell
@@ -158,8 +156,8 @@ extension AlbumsViewConroller {
     private func layoutSectionTypesOfMediaCell() -> NSCollectionLayoutSection {
 
         let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(50))
+            widthDimension: .fractionalWidth(MetricsAlbumsViewConroller.collectionLayoutSizeFractionalWidth),
+            heightDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutSizeAbsolute))
 
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -167,14 +165,14 @@ extension AlbumsViewConroller {
             alignment: .top)
 
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(50))
+            widthDimension: .fractionalWidth(MetricsAlbumsViewConroller.collectionLayoutSizeFractionalWidth),
+            heightDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutSizeAbsolute))
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(150))
+            widthDimension: .fractionalWidth(MetricsAlbumsViewConroller.collectionLayoutSizeFractionalWidth),
+            heightDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutItemSizeFractionalAbsolute))
 
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
@@ -188,12 +186,11 @@ extension AlbumsViewConroller {
 
     //MARK: - layoutSectionOtherCell
 
-
     private func layoutSectionOtherCell() -> NSCollectionLayoutSection {
 
         let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(50))
+            widthDimension: .fractionalWidth(MetricsAlbumsViewConroller.collectionLayoutSizeFractionalWidth),
+            heightDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutSizeAbsolute))
 
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -201,14 +198,14 @@ extension AlbumsViewConroller {
             alignment: .top)
 
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(50))
+            widthDimension: .fractionalWidth(MetricsAlbumsViewConroller.collectionLayoutSizeFractionalWidth),
+            heightDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutSizeAbsolute))
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(320))
+            widthDimension: .fractionalWidth(MetricsAlbumsViewConroller.collectionLayoutSizeFractionalWidth),
+            heightDimension: .absolute(MetricsAlbumsViewConroller.collectionLayoutGroupSizeFractionalAbsolute))
 
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
@@ -219,8 +216,6 @@ extension AlbumsViewConroller {
 
         return section
     }
-
-
 }
 
     //MARK: - Metrics
@@ -229,4 +224,12 @@ struct MetricsAlbumsViewConroller {
     static let collectionViewTopAnchorConstant: CGFloat = 8
     static let collectionViewLeadingAnchorConstant: CGFloat = 8
     static let collectionViewTrailingAnchorConstant: CGFloat = -8
+
+    static let collectionLayoutSizeFractionalWidth: CGFloat = 1
+    static let collectionLayoutSizeFractionalHeight: CGFloat = 1
+    static let collectionLayoutSizeAbsolute: CGFloat = 50
+    static let collectionLayoutItemSizeFractionalWidth: CGFloat = 180
+    static let collectionLayoutItemSizeFractionalAbsolute: CGFloat = 240
+    static let collectionLayoutGroupSizeFractionalAbsolute: CGFloat = 480
 }
+
