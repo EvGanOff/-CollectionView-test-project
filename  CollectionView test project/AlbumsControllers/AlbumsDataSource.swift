@@ -18,7 +18,6 @@ extension AlbumsViewConroller: UICollectionViewDataSource {
 
     //MARK: - numberOfItemsInSection
 
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var numberOfCells: Int = 0
         switch section {
@@ -37,7 +36,6 @@ extension AlbumsViewConroller: UICollectionViewDataSource {
     }
 
     //MARK: - cellForItemAt
-
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {

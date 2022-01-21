@@ -13,6 +13,8 @@
 		5E7E9CB82796EC4A0027D277 /* HeaderTypesOfMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E9CB72796EC4A0027D277 /* HeaderTypesOfMediaCell.swift */; };
 		5E7E9CBB27984F2D0027D277 /* OtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E9CBA27984F2D0027D277 /* OtherCell.swift */; };
 		5E7E9CBE279850CA0027D277 /* HeaderOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E9CBD279850CA0027D277 /* HeaderOtherCell.swift */; };
+		5E7E9CC7279ADE900027D277 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E9CC6279ADE900027D277 /* TabBarController.swift */; };
+		5E7E9CCB279AE24B0027D277 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E9CCA279AE24B0027D277 /* SearchViewController.swift */; };
 		5E81CF21276F948E00BE03B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81CF20276F948E00BE03B3 /* AppDelegate.swift */; };
 		5E81CF25276F948E00BE03B3 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81CF24276F948E00BE03B3 /* GalleryViewController.swift */; };
 		5E81CF28276F948E00BE03B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E81CF26276F948E00BE03B3 /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 		5E7E9CB72796EC4A0027D277 /* HeaderTypesOfMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTypesOfMediaCell.swift; sourceTree = "<group>"; };
 		5E7E9CBA27984F2D0027D277 /* OtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCell.swift; sourceTree = "<group>"; };
 		5E7E9CBD279850CA0027D277 /* HeaderOtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOtherCell.swift; sourceTree = "<group>"; };
+		5E7E9CC6279ADE900027D277 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		5E7E9CCA279AE24B0027D277 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5E81CF1D276F948E00BE03B3 /*  CollectionView test project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = " CollectionView test project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E81CF20276F948E00BE03B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E81CF24276F948E00BE03B3 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,22 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		5E7E9CC9279AE2240027D277 /* SearchViewConroller */ = {
+			isa = PBXGroup;
+			children = (
+				5E7E9CCA279AE24B0027D277 /* SearchViewController.swift */,
+			);
+			path = SearchViewConroller;
+			sourceTree = "<group>";
+		};
+		5E7E9CCC279B58050027D277 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5E7E9CC6279ADE900027D277 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		5E81CF14276F948E00BE03B3 = {
 			isa = PBXGroup;
 			children = (
@@ -141,11 +161,15 @@
 			isa = PBXGroup;
 			children = (
 				5E81CF20276F948E00BE03B3 /* AppDelegate.swift */,
+				5E7E9CCC279B58050027D277 /* TabBar */,
 				5E81CF5827708B4700BE03B3 /* Model */,
 				5E81CF54276FC01100BE03B3 /* View */,
 				5ED15C962778BC76001380BA /* AlbumsControllers */,
-				5E81CF26276F948E00BE03B3 /* Main.storyboard */,
+				5E7E9CAE278D96290027D277 /* MediaLibraryViewController */,
+				5E7E9CAF278D963A0027D277 /* GalleryViewController */,
+				5E7E9CC9279AE2240027D277 /* SearchViewConroller */,
 				5E81CF29276F948F00BE03B3 /* Assets.xcassets */,
+				5E81CF26276F948E00BE03B3 /* Main.storyboard */,
 				5E81CF2B276F948F00BE03B3 /* LaunchScreen.storyboard */,
 				5E81CF2E276F948F00BE03B3 /* Info.plist */,
 			);
@@ -177,8 +201,6 @@
 			children = (
 				5ED15C942778BBEB001380BA /* AlbumsViewController .swift */,
 				5E7E9CB3279036760027D277 /* AlbumsDataSource.swift */,
-				5E7E9CAE278D96290027D277 /* MediaLibraryViewController */,
-				5E7E9CAF278D963A0027D277 /* GalleryViewController */,
 			);
 			path = AlbumsControllers;
 			sourceTree = "<group>";
@@ -317,9 +339,11 @@
 				5E7E9CBB27984F2D0027D277 /* OtherCell.swift in Sources */,
 				5E81CF56276FC85000BE03B3 /* Model.swift in Sources */,
 				5E7E9CB1278D96D00027D277 /* HeaderMyAlbumsCell.swift in Sources */,
+				5E7E9CC7279ADE900027D277 /* TabBarController.swift in Sources */,
 				5E7E9CB4279036760027D277 /* AlbumsDataSource.swift in Sources */,
 				5E7E9CB627947C460027D277 /* HeaderPeopleAndPlacesCell.swift in Sources */,
 				5E7E9CBE279850CA0027D277 /* HeaderOtherCell.swift in Sources */,
+				5E7E9CCB279AE24B0027D277 /* SearchViewController.swift in Sources */,
 				5EACFFD4278700DC00EBE459 /* MyAlbumsCell.swift in Sources */,
 				5EACFFD62787012500EBE459 /* PeopleAndPlacesCell.swift in Sources */,
 				5E7E9CB82796EC4A0027D277 /* HeaderTypesOfMediaCell.swift in Sources */,
