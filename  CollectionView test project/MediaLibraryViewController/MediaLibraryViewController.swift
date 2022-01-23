@@ -1,19 +1,17 @@
 //
-//  ViewController.swift
+//  MediaLibraryViewController.swift
 //   CollectionView test project
 //
 //  Created by Евгений Ганусенко on 12/19/21.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class MediaLibrarySubViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemIndigo
     }
-
-
 }
-
