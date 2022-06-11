@@ -62,8 +62,6 @@ class AlbumsViewConroller: UIViewController {
     }
 }
 
-    //MARK: - Extensions
-
 extension AlbumsViewConroller {
 
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
@@ -216,20 +214,19 @@ extension AlbumsViewConroller {
 
         return section
     }
-}
-
     //MARK: - Metrics
 
-struct MetricsAlbumsViewConroller {
-    static let collectionViewTopAnchorConstant: CGFloat = 8
-    static let collectionViewLeadingAnchorConstant: CGFloat = 8
-    static let collectionViewTrailingAnchorConstant: CGFloat = -8
+    private struct MetricsAlbumsViewConroller {
+        static let collectionViewTopAnchorConstant: CGFloat = 8
+        static let collectionViewLeadingAnchorConstant: CGFloat = 8
+        static let collectionViewTrailingAnchorConstant: CGFloat = -8
 
-    static let collectionLayoutSizeFractionalWidth: CGFloat = 1
-    static let collectionLayoutSizeFractionalHeight: CGFloat = 1
-    static let collectionLayoutSizeAbsolute: CGFloat = 50
-    static let collectionLayoutItemSizeFractionalWidth: CGFloat = 180
-    static let collectionLayoutItemSizeFractionalAbsolute: CGFloat = 240
-    static let collectionLayoutGroupSizeFractionalAbsolute: CGFloat = 480
+        static let collectionLayoutSizeFractionalWidth: CGFloat = 1
+        static let collectionLayoutSizeFractionalHeight: CGFloat = 1
+        static let collectionLayoutSizeAbsolute: CGFloat = 50
+        static let collectionLayoutItemSizeFractionalWidth: CGFloat = 180
+        static let collectionLayoutItemSizeFractionalAbsolute: CGFloat = 240
+        static let collectionLayoutGroupSizeFractionalAbsolute: CGFloat = 480
+    }
 }
 

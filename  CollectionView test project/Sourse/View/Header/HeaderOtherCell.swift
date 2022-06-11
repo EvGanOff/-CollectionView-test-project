@@ -11,7 +11,7 @@ import UIKit
 class HeaderOtherCell: UICollectionReusableView {
     static let identifier = "HeaderOtherCell"
 
-    //MARK: - Properties
+    //MARK: - Properties -
 
     private lazy var container: UIView = {
         let container = UIView()
@@ -40,7 +40,7 @@ class HeaderOtherCell: UICollectionReusableView {
         return label
     }()
 
-    // MARK: - Init
+    // MARK: - Init -
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,7 +56,7 @@ class HeaderOtherCell: UICollectionReusableView {
         super.layoutSubviews()
     }
 
-    // MARK: - SetupHierarchy
+    // MARK: - SetupHierarchy -
 
     private func setupHierarchy() {
         addSubview(container)
@@ -64,7 +64,7 @@ class HeaderOtherCell: UICollectionReusableView {
         container.addSubview(showAllLabel)
     }
 
-    // MARK: - SetupLayout
+    // MARK: - SetupLayout -
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
@@ -84,14 +84,14 @@ class HeaderOtherCell: UICollectionReusableView {
             showAllLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
-}
 
-// MARK: - Metrics
+    // MARK: - Metrics -
 
-struct MetricsHeaderOtherCell {
+    struct MetricsHeaderOtherCell {
 
-    static let labelFont: UIFont = .boldSystemFont(ofSize: 25)
-    static let labelLeadingAnchorConstant: CGFloat = 5
-    static let buttonTrailingAnchorConstant: CGFloat = -15
+        static let labelFont: UIFont = .boldSystemFont(ofSize: 25)
+        static let labelLeadingAnchorConstant: CGFloat = 5
+        static let buttonTrailingAnchorConstant: CGFloat = -15
+    }
 }
 

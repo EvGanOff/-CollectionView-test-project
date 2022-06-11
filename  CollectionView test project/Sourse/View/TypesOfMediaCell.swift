@@ -1,15 +1,15 @@
 //
-//  OtherCell.swift
+//  TypesOfMediaCell.swift
 //   CollectionView test project
 //
-//  Created by Евгений Ганусенко on 1/19/22.
+//  Created by Евгений Ганусенко on 1/6/22.
 //
 
 import Foundation
 import UIKit
 
-class OtherCell: UICollectionViewCell {
-    static let identifier = "OtherCell"
+class TypesOfMediaCell: UICollectionViewCell {
+    static let identifier = "TypesOfMediaCell"
 
     // MARK: - Properties
 
@@ -26,7 +26,7 @@ class OtherCell: UICollectionViewCell {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFill
-        image.layer.cornerRadius = 2
+        image.layer.cornerRadius = 15
         image.clipsToBounds = true
         image.layer.masksToBounds = true
         return image
@@ -34,7 +34,7 @@ class OtherCell: UICollectionViewCell {
 
     lazy var titleLabel: UILabel = {
         let lable = UILabel()
-        lable.font = MetricsOtherСell.labelFont
+        lable.font = MetricsTypesOfMediaСell.labelFont
         lable.translatesAutoresizingMaskIntoConstraints = false
         lable.textAlignment = .left
         lable.textColor = .black
@@ -44,7 +44,7 @@ class OtherCell: UICollectionViewCell {
     lazy var numberLabel: UILabel = {
         let lable = UILabel()
         lable.textColor = .systemGray3
-        lable.font = MetricsOtherСell.labelFont
+        lable.font = MetricsTypesOfMediaСell.labelFont
         lable.translatesAutoresizingMaskIntoConstraints = false
         lable.textAlignment = .left
         lable.textColor = .systemGray2
@@ -71,7 +71,6 @@ class OtherCell: UICollectionViewCell {
     // MARK: - SetupHierarchy
 
     private func setupHierarchy() {
-        
         [titleImage, titleLabel, numberLabel].forEach { contentView.addSubview($0) }
     }
 
@@ -81,42 +80,42 @@ class OtherCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
                 titleImage.topAnchor.constraint(
                     equalTo: contentView.topAnchor,
-                    constant: MetricsOtherСell.titleImageTopAnchorConstant),
+                    constant: MetricsTypesOfMediaСell.titleImageTopAnchorConstant),
                 titleImage.leadingAnchor.constraint(
                     equalTo: contentView.leadingAnchor),
                 titleImage.widthAnchor.constraint(
-                    equalToConstant: MetricsOtherСell.titleImageWidthAnchorConstant),
+                    equalToConstant: MetricsTypesOfMediaСell.titleImageWidthAnchorConstant),
                 titleImage.heightAnchor.constraint(
-                    equalToConstant: MetricsOtherСell.titleImageHeightAnchorConstant),
+                    equalToConstant: MetricsTypesOfMediaСell.titleImageHeightAnchorConstant),
 
                 titleLabel.topAnchor.constraint(
                     equalTo: titleImage.topAnchor,
-                    constant: MetricsOtherСell.titleLabelTopAnchorConstant),
+                    constant: MetricsTypesOfMediaСell.titleLabelTopAnchorConstant),
                 titleLabel.leadingAnchor.constraint(
                     equalTo: titleImage.leadingAnchor,
-                    constant: MetricsOtherСell.titleLabelLeadingAnchorConstant),
+                    constant: MetricsTypesOfMediaСell.titleLabelLeadingAnchorConstant),
 
                 numberLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
                 numberLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
                 numberLabel.trailingAnchor.constraint(
                     equalTo: contentView.trailingAnchor,
-                    constant: MetricsOtherСell.titleNumberTrailingAnchorConstant)
+                    constant: MetricsTypesOfMediaСell.titleNumberTrailingAnchorConstant)
         ])
     }
-}
 
-//MARK: - Metrics
+    //MARK: - Metrics -
 
-struct MetricsOtherСell {
+    private struct MetricsTypesOfMediaСell {
 
-    static let labelFont = UIFont(name: "system", size: 22)
+        static let labelFont = UIFont(name: "system", size: 18)
 
-    static let titleImageTopAnchorConstant: CGFloat = 5
-    static let titleImageWidthAnchorConstant: CGFloat = 30
-    static let titleImageHeightAnchorConstant: CGFloat = 30
+        static let titleImageTopAnchorConstant: CGFloat = 5
+        static let titleImageWidthAnchorConstant: CGFloat = 30
+        static let titleImageHeightAnchorConstant: CGFloat = 30
 
-    static let titleLabelTopAnchorConstant: CGFloat = 5
-    static let titleLabelLeadingAnchorConstant: CGFloat = 50
+        static let titleLabelTopAnchorConstant: CGFloat = 5
+        static let titleLabelLeadingAnchorConstant: CGFloat = 50
 
-    static let titleNumberTrailingAnchorConstant: CGFloat = -40
+        static let titleNumberTrailingAnchorConstant: CGFloat = -40
+    }
 }

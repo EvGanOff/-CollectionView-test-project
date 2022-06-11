@@ -12,7 +12,7 @@ class HeaderMyAlbumsCell: UICollectionReusableView {
 
     static let identifier = "HeaderMyAlbumsCell"
     
-    // MARK: - Properties
+    // MARK: - Properties -
 
     private lazy var container: UIView = {
         let container = UIView()
@@ -41,7 +41,7 @@ class HeaderMyAlbumsCell: UICollectionReusableView {
         return label
     }()
 
-    // MARK: - Init
+    // MARK: - Init -
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,7 +57,7 @@ class HeaderMyAlbumsCell: UICollectionReusableView {
         super.layoutSubviews()
     }
 
-    // MARK: - SetupHierarchy
+    // MARK: - SetupHierarchy -
 
     func setupHierarchy() {
         addSubview(container)
@@ -65,7 +65,7 @@ class HeaderMyAlbumsCell: UICollectionReusableView {
         container.addSubview(showAllLabel)
     }
 
-    // MARK: - SetupLayout
+    // MARK: - SetupLayout -
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
@@ -83,14 +83,13 @@ class HeaderMyAlbumsCell: UICollectionReusableView {
             showAllLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
-}
+    // MARK: - Metric -
 
-// MARK: - Metric
+    private struct MetricsHeaderMyAlbums {
 
-struct MetricsHeaderMyAlbums {
-
-    static let labelFont: UIFont = .boldSystemFont(ofSize: 20)
-    static let labeleTopAnchorConstant: CGFloat = 10
-    static let labelLeadingAnchorConstant: CGFloat = 5
-    static let buttonTrailingAnchorConstant: CGFloat = -15
+        static let labelFont: UIFont = .boldSystemFont(ofSize: 20)
+        static let labeleTopAnchorConstant: CGFloat = 10
+        static let labelLeadingAnchorConstant: CGFloat = 5
+        static let buttonTrailingAnchorConstant: CGFloat = -15
+    }
 }
