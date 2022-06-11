@@ -5,9 +5,7 @@
 //  Created by Евгений Ганусенко on 12/19/21.
 //
 
-import Foundation
 import UIKit
-
 
 struct AlbumsModel {
     var image: UIImage?

@@ -1,17 +1,17 @@
 //
-//  TypesOfMediaCell.swift
+//  OtherCell.swift
 //   CollectionView test project
 //
-//  Created by Евгений Ганусенко on 1/6/22.
+//  Created by Евгений Ганусенко on 1/19/22.
 //
 
 import Foundation
 import UIKit
 
-class TypesOfMediaCell: UICollectionViewCell {
-    static let identifier = "TypesOfMediaCell"
+class OtherCell: UICollectionViewCell {
+    static let identifier = "OtherCell"
 
-    // MARK: - Properties
+    // MARK: - Properties -
 
     var data: AlbumsModel? {
         didSet {
@@ -26,7 +26,7 @@ class TypesOfMediaCell: UICollectionViewCell {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFill
-        image.layer.cornerRadius = 15
+        image.layer.cornerRadius = 2
         image.clipsToBounds = true
         image.layer.masksToBounds = true
         return image
@@ -34,7 +34,7 @@ class TypesOfMediaCell: UICollectionViewCell {
 
     lazy var titleLabel: UILabel = {
         let lable = UILabel()
-        lable.font = MetricsTypesOfMediaСell.labelFont
+        lable.font = MetricsOtherСell.labelFont
         lable.translatesAutoresizingMaskIntoConstraints = false
         lable.textAlignment = .left
         lable.textColor = .black
@@ -44,14 +44,14 @@ class TypesOfMediaCell: UICollectionViewCell {
     lazy var numberLabel: UILabel = {
         let lable = UILabel()
         lable.textColor = .systemGray3
-        lable.font = MetricsTypesOfMediaСell.labelFont
+        lable.font = MetricsOtherСell.labelFont
         lable.translatesAutoresizingMaskIntoConstraints = false
         lable.textAlignment = .left
         lable.textColor = .systemGray2
         return lable
     }()
 
-    // MARK: - Init
+    // MARK: - Init -
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -61,53 +61,53 @@ class TypesOfMediaCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - LayoutSubviews
+    // MARK: - LayoutSubviews -
 
     override func layoutSubviews() {
         setupHierarchy()
         setupLayout()
     }
 
-    // MARK: - SetupHierarchy
+    // MARK: - SetupHierarchy -
 
     private func setupHierarchy() {
+        
         [titleImage, titleLabel, numberLabel].forEach { contentView.addSubview($0) }
     }
 
-    // MARK: - SetupLayout
+    // MARK: - SetupLayout -
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
                 titleImage.topAnchor.constraint(
                     equalTo: contentView.topAnchor,
-                    constant: MetricsTypesOfMediaСell.titleImageTopAnchorConstant),
+                    constant: MetricsOtherСell.titleImageTopAnchorConstant),
                 titleImage.leadingAnchor.constraint(
                     equalTo: contentView.leadingAnchor),
                 titleImage.widthAnchor.constraint(
-                    equalToConstant: MetricsTypesOfMediaСell.titleImageWidthAnchorConstant),
+                    equalToConstant: MetricsOtherСell.titleImageWidthAnchorConstant),
                 titleImage.heightAnchor.constraint(
-                    equalToConstant: MetricsTypesOfMediaСell.titleImageHeightAnchorConstant),
+                    equalToConstant: MetricsOtherСell.titleImageHeightAnchorConstant),
 
                 titleLabel.topAnchor.constraint(
                     equalTo: titleImage.topAnchor,
-                    constant: MetricsTypesOfMediaСell.titleLabelTopAnchorConstant),
+                    constant: MetricsOtherСell.titleLabelTopAnchorConstant),
                 titleLabel.leadingAnchor.constraint(
                     equalTo: titleImage.leadingAnchor,
-                    constant: MetricsTypesOfMediaСell.titleLabelLeadingAnchorConstant),
+                    constant: MetricsOtherСell.titleLabelLeadingAnchorConstant),
 
                 numberLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
                 numberLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
                 numberLabel.trailingAnchor.constraint(
                     equalTo: contentView.trailingAnchor,
-                    constant: MetricsTypesOfMediaСell.titleNumberTrailingAnchorConstant)
+                    constant: MetricsOtherСell.titleNumberTrailingAnchorConstant)
         ])
     }
+    //MARK: - Metrics -
 
-    //MARK: - Metrics
+    private struct MetricsOtherСell {
 
-    struct MetricsTypesOfMediaСell {
-
-        static let labelFont = UIFont(name: "system", size: 18)
+        static let labelFont = UIFont(name: "system", size: 22)
 
         static let titleImageTopAnchorConstant: CGFloat = 5
         static let titleImageWidthAnchorConstant: CGFloat = 30

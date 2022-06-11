@@ -5,18 +5,17 @@
 //  Created by Евгений Ганусенко on 1/13/22.
 //
 
-import Foundation
 import UIKit
 
 extension AlbumsViewConroller: UICollectionViewDataSource {
 
-    //MARK: - NumberOfSections
+    //MARK: - NumberOfSections -
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
     }
 
-    //MARK: - numberOfItemsInSection
+    //MARK: - numberOfItemsInSection -
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var numberOfCells: Int = 0
@@ -35,7 +34,7 @@ extension AlbumsViewConroller: UICollectionViewDataSource {
         return numberOfCells
     }
 
-    //MARK: - cellForItemAt
+    //MARK: - CellForItemAt -
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
@@ -60,7 +59,7 @@ extension AlbumsViewConroller: UICollectionViewDataSource {
         }
     }
 
-    //MARK: - viewForSupplementaryElementOfKind
+    //MARK: - ViewForSupplementaryElementOfKind -
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch indexPath.section {

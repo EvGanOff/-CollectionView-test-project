@@ -5,14 +5,13 @@
 //  Created by Евгений Ганусенко on 1/16/22.
 //
 
-import Foundation
 import UIKit
 
 class HeaderPeopleAndPlacesCell: UICollectionReusableView {
 
     static let identifier = "HeaderPeopleAndPlacesCell"
 
-    //MARK: - Properties
+    //MARK: - Properties -
 
     private lazy var container: UIView = {
         let container = UIView()
@@ -41,7 +40,7 @@ class HeaderPeopleAndPlacesCell: UICollectionReusableView {
         return label
     }()
 
-    // MARK: - Init
+    // MARK: - Init -
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,7 +56,7 @@ class HeaderPeopleAndPlacesCell: UICollectionReusableView {
         super.layoutSubviews()
     }
 
-    // MARK: - SetupHierarchy
+    // MARK: - SetupHierarchy -
 
     private func setupHierarchy() {
         addSubview(container)
@@ -65,7 +64,7 @@ class HeaderPeopleAndPlacesCell: UICollectionReusableView {
         container.addSubview(showAllLabel)
     }
 
-    // MARK: - SetupLayout
+    // MARK: - SetupLayout -
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
@@ -85,15 +84,15 @@ class HeaderPeopleAndPlacesCell: UICollectionReusableView {
             showAllLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
-}
 
-// MARK: - Metric
+    // MARK: - Metric -
 
-struct MetricsHeaderPeopleAndPlacesCell {
+    private struct MetricsHeaderPeopleAndPlacesCell {
 
-    static let labelFont: UIFont = .boldSystemFont(ofSize: 20)
-    static let labeleTopAnchorConstant: CGFloat = 10
-    static let labelLeadingAnchorConstant: CGFloat = 5
-    static let buttonTrailingAnchorConstant: CGFloat = -15
+        static let labelFont: UIFont = .boldSystemFont(ofSize: 20)
+        static let labeleTopAnchorConstant: CGFloat = 10
+        static let labelLeadingAnchorConstant: CGFloat = 5
+        static let buttonTrailingAnchorConstant: CGFloat = -15
+    }
 }
 

@@ -5,14 +5,13 @@
 //  Created by Евгений Ганусенко on 1/18/22.
 //
 
-import Foundation
 import UIKit
 
 class HeaderTypesOfMediaCell: UICollectionReusableView {
     
     static let identifier = "HeaderTypesOfMediaCell"
 
-    //MARK: - Properties
+    //MARK: - Properties -
 
     private lazy var container: UIView = {
         let container = UIView()
@@ -41,7 +40,7 @@ class HeaderTypesOfMediaCell: UICollectionReusableView {
         return label
     }()
 
-    // MARK: - Init
+    // MARK: - Init -
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,7 +56,7 @@ class HeaderTypesOfMediaCell: UICollectionReusableView {
         super.layoutSubviews()
     }
 
-    // MARK: - SetupHierarchy
+    // MARK: - SetupHierarchy -
 
     private func setupHierarchy() {
         addSubview(container)
@@ -65,7 +64,7 @@ class HeaderTypesOfMediaCell: UICollectionReusableView {
         container.addSubview(showAllLabel)
     }
 
-    // MARK: - SetupLayout
+    // MARK: - SetupLayout -
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
@@ -85,14 +84,14 @@ class HeaderTypesOfMediaCell: UICollectionReusableView {
             showAllLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
-}
 
-// MARK: - Metrics
+    // MARK: - Metrics -
 
-struct MetricsHeaderCellTypesOfMedia {
+    struct MetricsHeaderCellTypesOfMedia {
 
-    static let labelFont: UIFont = .boldSystemFont(ofSize: 25)
-    static let labelLeadingAnchorConstant: CGFloat = 5
-    static let buttonTrailingAnchorConstant: CGFloat = -15
+        static let labelFont: UIFont = .boldSystemFont(ofSize: 25)
+        static let labelLeadingAnchorConstant: CGFloat = 5
+        static let buttonTrailingAnchorConstant: CGFloat = -15
+    }
 }
 
